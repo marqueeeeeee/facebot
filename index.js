@@ -19,6 +19,14 @@ app.get('/', function (req, res) {
     res.send('Hello world, I am a chat bot');
 });
 
+app.get('/help', function (req, res) {
+    res.send('Privacy Policy');
+});
+
+app.get('/tos', function (req, res) {
+    res.send('Terms of Service');
+});
+
 // for Facebook verification
 app.get('/webhook/', function (req, res) {
     if (req.query['hub.verify_token'] === 'my_voice_is_my_password_verify_me') {
