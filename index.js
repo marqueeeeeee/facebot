@@ -42,7 +42,14 @@ app.post('/webhook/', function (req, res) {
         var sender = event.sender.id
         if (event.message && event.message.text) {
             var text = event.message.text
-            sendTextMessage(sender, "Text received, echo: " + text.substring(0, 200))
+            if(text.indexOf('weather')) {
+                sendTextMessage(sender, "the weather in manila is cloudy");
+            }
+            else if(text.indexOf('time')) {
+                sendTextMessage(sender, "the time now is 1:05PM");
+            } else {
+                sendTextMessage(sender, "try asking about the weather or time.");
+            }
         }
     }
     res.sendStatus(200)
