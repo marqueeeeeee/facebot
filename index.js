@@ -42,10 +42,10 @@ app.post('/webhook/', function (req, res) {
         var sender = event.sender.id
         if (event.message && event.message.text) {
             var text = event.message.text
-            if(text.indexOf('weather')) {
+            if(text.indexOf('weather') > -1) {
                 sendTextMessage(sender, "the weather in manila is cloudy");
             }
-            else if(text.indexOf('time')) {
+            else if(text.indexOf('time') > -1) {
                 sendTextMessage(sender, "the time now is 1:05PM");
             } else {
                 sendTextMessage(sender, "try asking about the weather or time.");
