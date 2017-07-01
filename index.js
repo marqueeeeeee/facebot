@@ -48,7 +48,7 @@ app.post('/webhook/', function (req, res) {
             else if(text.indexOf('time') > -1) {
                 sendTextMessage(sender, "the time now is 1:05PM");
             } 
-			else if(text.indexOf('pogi' > -1) {
+			else if(text.indexOf('pogi') > -1) {
 				sendTextMessage(sender, "of course you!");
 			}
 			else {
